@@ -1,0 +1,15 @@
+FROM golang:latest AS builder
+
+COPY ./go/src /go/src
+
+WORKDIR /go/src
+
+RUN go build codeeducation.go
+
+FROM scratch
+
+COPY --from=builder /go/src /go/src
+
+WORKDIR /go/src
+
+CMD ["./codeeducation"]
