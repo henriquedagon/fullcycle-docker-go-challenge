@@ -1,4 +1,4 @@
-# Downloading 
+# Downloading image
 
 ```bash
 docker pull bcdscrypto/codeeducation
